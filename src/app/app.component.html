@@ -1,7 +1,13 @@
 <div>
-  <app-simple-form></app-simple-form>
+  <!-- <app-simple-form></app-simple-form> -->
   <ul>
-    <app-simple-form *ngFor="let message of mail.messages" [msg]="message">
+    <li *ngFor="let message of mail.messages">
+      {{message.text}}
+    </li>
+  </ul>
+  <hr/>
+  <ul>
+    <app-simple-form *ngFor="let message of mail.messages" [msg]="message.text" (update)="onUpdate(message.id, $event.text)">
     </app-simple-form>
   </ul>
   <hr/>
