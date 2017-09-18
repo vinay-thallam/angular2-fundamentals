@@ -1,9 +1,8 @@
 <div>
   <app-simple-form></app-simple-form>
   <ul>
-    <li *ngFor="let message of mail.messages">
-      {{message}}
-    </li>
+    <app-simple-form *ngFor="let message of mail.messages" [msg]="message">
+    </app-simple-form>
   </ul>
   <hr/>
   {{api}}
