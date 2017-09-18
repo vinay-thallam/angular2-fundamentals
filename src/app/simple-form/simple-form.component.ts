@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   template: `
     <div>
       {{msg}}
-      <input #myInput type="text">
+      <input #myInput type="text" [(ngModel)]="msg">
       <button (mouseover)="onClick($event, myInput.value)">Click me!</button>
     </div>
   `,
@@ -15,7 +15,9 @@ export class SimpleFormComponent implements OnInit {
 
   @Input() msg;
 
-  constructor() { }
+  constructor() { 
+    setInterval(() => this.msg = Math.random().toString(), 2000);
+  }
 
   onClick(event, text) {
     console.log(event)
