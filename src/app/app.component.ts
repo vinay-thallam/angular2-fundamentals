@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MailService } from './mail.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular2-fundamentals';
+
+  constructor(private mail:MailService) {
+
+  }
 }
