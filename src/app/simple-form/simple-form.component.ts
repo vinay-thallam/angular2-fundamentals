@@ -4,12 +4,25 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-simple-form',
   template: `
     <div>
-      {{msg}}
       <input #myInput type="text" [(ngModel)]="msg">
       <button (click)="update.emit({text:msg})">Click me!</button>
     </div>
   `,
-  styles: []
+  styles: [`
+  :host{
+    display: flex;
+    flex-direction: column;
+  } 
+  *{
+    font-family : monospace;
+  }
+  input:focus{
+    font-weight : bold;
+  }
+  button{
+    border : none
+  }
+  `]
 })
 export class SimpleFormComponent implements OnInit {
 
