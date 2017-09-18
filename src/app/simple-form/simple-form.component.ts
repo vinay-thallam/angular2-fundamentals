@@ -4,7 +4,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-simple-form',
   template: `
     <div>
-      <input #myInput type="text" [(ngModel)]="msg">
+      <input 
+        #myInput 
+        type="text" 
+        [(ngModel)]="msg" 
+        [ngClass]="{mousedown : isMouseDown}"
+        (mousedown)="isMouseDown = true"
+        (mouseup)="isMouseDown = false"
+        (mouseleave)="isMouseDown = false">
       <button (click)="update.emit({text:msg})">Click me!</button>
     </div>
   `,
@@ -21,6 +28,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   }
   button{
     border : none
+  }
+  .mousedown{
+    border : 2px solid red;
   }
   `]
 })
