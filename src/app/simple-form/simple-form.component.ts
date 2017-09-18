@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
+  // encapsulation: ViewEncapsulation.Native, //This config prevents the global css from applying to this component
   selector: 'app-simple-form',
   template: `
     <div>
@@ -12,7 +13,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         (mousedown)="isMouseDown = true"
         (mouseup)="isMouseDown = false"
         (mouseleave)="isMouseDown = false">
-      <button (click)="update.emit({text:msg})">Click me!</button>
+      <button 
+      class="white bg-black code"
+      (click)="update.emit({text:msg})">Click me!</button>
     </div>
   `,
   styles: [`
