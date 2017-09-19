@@ -80,7 +80,7 @@ export class TourOfHeroesComponent implements OnInit {
   selectedHero: Hero;
 
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
