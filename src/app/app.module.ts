@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
+import { HeroDetailComponent } from './tour-of-heroes/hero-detail.component';
 import { MailService } from './mail.service';
 import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component';
 
@@ -12,7 +13,8 @@ import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component
   declarations: [
     AppComponent,
     SimpleFormComponent,
-    TourOfHeroesComponent
+    TourOfHeroesComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule, FormsModule
