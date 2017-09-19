@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { MailService } from './mail.service';
+import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SimpleFormComponent
+    SimpleFormComponent,
+    TourOfHeroesComponent
   ],
   imports: [
     BrowserModule, FormsModule
